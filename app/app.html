@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Hello Electron React!</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="../node_modules/font-awesome/css/font-awesome.min.css" />
     <script>
       if (!process.env.HOT) {
@@ -15,8 +16,18 @@
   </head>
   <body>
     <div id="root"></div>
+    <!-- <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.js"></script> -->
     <script>
       {
+        // window.$ = window.jQuery = require('jquery');
+        // const jQuery = require('jquery');
+        // require('bootstrap');
+        // import $ from 'jquery';
+        // import 'bootstrap';
+        var jQuery = require('jquery');
+        require('bootstrap');
+
         const script = document.createElement('script');
         const port = process.env.PORT || 3000;
         script.src = (process.env.HOT) ? `http://localhost:${port}/dist/bundle.js` : '../dist/bundle.js';

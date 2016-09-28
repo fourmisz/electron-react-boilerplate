@@ -40,11 +40,17 @@ export default merge(baseConfig, {
     ]
   },
 
+  externals: ['jquery','bootstrap'],
+
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin(),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('development')
+    }),
+    new webpack.ProvidePlugin({
+        'window.$': 'jquery',
+        'window.jQuery': 'jquery'
     })
   ],
 
